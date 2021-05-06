@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h3 {
+        color: tomato;
+    }
+    </style>
+</head>
+<body>
+<h1>Mi web component vale! </h1>
+
+<mi-usercard name="juan" avatar='https://randomuser.me/api/portraits/men/1.jpg'>
+    <div slot="email">juan@gmail.com</div>
+    <div slot="phone">123-345-456</div>
+</mi-usercard>
+<mi-usercard name="maria" avatar='https://randomuser.me/api/portraits/women/1.jpg'>
+    <div slot="email">maria@gmail.com</div>
+    <div slot="phone">987-765-432</div>
+</mi-usercard>
+<!--<saludo-basico nombre="Raquel"></saludo-basico>-->
+<!--<script src="components.js"></script>-->
+<script src="userCard.js"></script>
+</body>
+</html>
