@@ -1,0 +1,15 @@
+<script>
+    // prototipo de elemento, a partir del elemento base
+    let example1 = Object.create(HTMLElement.prototype);
+
+    // manejador del evento createdCallback, ocurre cuando se instancia el componente
+    example1.createdCallback = function() {
+        console.log("creado")
+        this.textContent = "Hello world";
+    }
+
+    // registro el nuevo componente que quiero crear "castel-hello"
+    document.registerElement('castel-hello', {
+        prototype: example1
+    });
+</script>

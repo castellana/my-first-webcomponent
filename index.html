@@ -14,6 +14,20 @@
 </head>
 <body>
 <h1>Mi web component vale! </h1>
+<div id="target"></div>
+
+<template id="notificacion">
+    <div class="error">
+        <p class="error__icon">
+            <img src="" alt="">
+        </p>
+        <div class="error__body">
+            <p><strong class="error__title">Error de guardado</strong></p>
+            <p>Tenemos problemas para comunicarnos con <strong>los servidores</strong></p>
+            <p><button class="error__action">Intentar otra vez</button></p>
+        </div>
+    </div>
+</template>
 
 <mi-usercard name="juan" avatar='https://randomuser.me/api/portraits/men/1.jpg'>
     <div slot="email">juan@gmail.com</div>
@@ -23,8 +37,11 @@
     <div slot="email">maria@gmail.com</div>
     <div slot="phone">987-765-432</div>
 </mi-usercard>
-<!--<saludo-basico nombre="Raquel"></saludo-basico>-->
-<!--<script src="components.js"></script>-->
+<saludo-basico nombre="Raquel"></saludo-basico>
+
+<mi-notificacion></mi-notificacion>
 <script src="userCard.js"></script>
+<script src="components.js"></script>
+
 </body>
 </html>

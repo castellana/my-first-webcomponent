@@ -1,0 +1,19 @@
+<!--para el componente feedback, vamos a usar también Template-->
+<!-- ownerDocument, importNode-->
+<template>
+    <p>This is a p in a template</p>
+</template>
+<script>
+    let prototipo = Object.create(HTMLElement.prototype);
+
+    let templateContent = document.currentScript.ownerDocument.querySelector('template').content
+
+    prototipo.createCallback = function() {
+        let clone = document.importNode(templateContent, true)
+        this.appendChild(clone)
+    }
+
+    document.registerElement('castel-feedback', {
+        prototype: prototipo
+    });
+</script>

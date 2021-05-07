@@ -31,3 +31,26 @@ class SaludoBasicoElement extends HTMLElement {
 //declaramos mi etiqueta, con nombre al menos doble!, con guión
 window.customElements.define("saludo-basico", SaludoBasicoElement);
 
+class NotificacionElement extends HTMLElement {
+    constructor() {
+        super();
+
+        this.template = document.getElementById("notificacion")
+    }
+
+    connectedCallback() {
+        // this.innerText = "Funciona";
+        let clonedDOM = document.importNode(this.template.content, true)
+        this.appendChild(clonedDOM)
+    }
+
+    attributeChangedCallback(attr, oldval, newval) {
+
+    }
+
+    static get observedAttributes() {
+        return [""];
+    }
+}
+
+window.customElements.define("mi-notificacion", NotificacionElement)
