@@ -28,7 +28,7 @@ template.innerHTML = `
         <div>
             <h3></h3>
             <div class='info'>
-                <p><slot name="email"/>></p>
+                <p><slot name="email"/></p>
                 <p><slot name="phone"</p>
             </div>
             <button id="toggle-info">Hide info</button>
@@ -39,20 +39,22 @@ template.innerHTML = `
    `;
 
 
-class UserCard extends HTMLElement {
+class AprendiendouserCard extends HTMLElement {
     constructor() {
         super();
 
         this.showInfo = true; //los detalles se mostrarán por default
+        // this.innerHTML = `Vamos a ver`;
+        // this.innerHTML = `<h3>${this.getAttribute('name')}</h3>`
         this.attachShadow({ mode: 'open'}) //para agregar estilo sólo para este componente
         this.shadowRoot.appendChild(template.content.cloneNode(true))
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name')
         this.shadowRoot.querySelector('img').src = this.getAttribute('avatar')
-        // this.innerHTML = `Vamos a ver`;
-        // this.innerHTML = `<h3>${this.getAttribute('name')}</h3>`
+
     }
 
     //hacemos que el botón se pueda clickear y aparezca y desapazca el card:
+    //paso 2)
     toggleInfo() {
         console.log(123) //para ver si funciona el click
         this.showInfo = !this.showInfo;
@@ -68,6 +70,7 @@ class UserCard extends HTMLElement {
             toggleBtn.innerText = 'Show Info';
         }
     }
+    //paso 1) eventListener -> Lifecicle method
     connectedCallback() {
         this.shadowRoot.querySelector('#toggle-info').addEventListener('click', () => this.toggleInfo())
     }
@@ -76,4 +79,4 @@ class UserCard extends HTMLElement {
     }
 }
 
-window.customElements.define('mi-usercard', UserCard)
+window.customElements.define('mi-usercard', AprendiendouserCard)

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Error Notification</title>
+
+    <link rel="stylesheet" href="assets/css/errorNotice.css">
+</head>
+<body>
+    <h1 class="error__title">Mi web component de makigas </h1>
+    <div id="target"></div>
+
+    <!--el template lo podemos escribir en el archivo .js ó aquí en html-->
+    <template id="notificacion"> <!--Sólo este elemento template pertenece al DOM del documento!!! Sus hijos (div, p, etc) NO-->
+        <div class="error">
+            <p class="error__icon">
+                <img src="" alt="">
+            </p>
+            <div class="error__body">
+                <p><strong class="error__title">Error de guardado</strong></p>
+                <p>Tenemos problemas para comunicarnos con <strong>los servidores</strong></p>
+                <p><button class="error__action">Intentar otra vez</button></p>
+            </div>
+        </div>
+    </template>
+
+    <castel-error-notice tipo="error" title="Permiso denegado"></castel-error-notice>
+
+
+    <script src="errorNotice.js"></script>
+
+</body>
+</html>
